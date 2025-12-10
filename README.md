@@ -1,44 +1,47 @@
-🏬 DSA 2040 Practical Exam — Data Warehousing & Data Mining Project
+# 🏬 DSA 2040 Practical Exam — Data Warehousing & Data Mining Project
 
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)  
+![SQLite](https://img.shields.io/badge/SQLite-3.40-003B57?logo=sqlite&logoColor=white)  
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-0.25-orange?logo=scikit-learn&logoColor=white)  
+![MLxtend](https://img.shields.io/badge/MLxtend-0.20-green)  
 
+**Student Name:** Peter Kidiga  
+**Student ID:** 341  
+**Course:** DSA 2040 — Data Warehousing & Data Mining (FS 2025)  
+**Submission Date:** 10/12/2025  
 
+---
 
+## 📌 Project Overview
 
+This project demonstrates **end-to-end applied data science**, combining:  
 
+<details>
+<summary>1️⃣ Data Warehousing</summary>
 
-
-Student Name: Peter Kidiga
-Student ID: 341
-Course: DSA 2040 — Data Warehousing & Data Mining (FS 2025)
-Submission Date: 10/12/2025
-
-📌 Project Overview
-
-This project demonstrates end-to-end applied data science, combining:
-
-<details> <summary>1️⃣ Data Warehousing</summary>
-
-Designed, cleaned, transformed, and stored a large retail dataset from UCI Online Retail II
-
-Implemented a warehouse structure for analytical queries
-
-Executed OLAP queries for insights: sales trends across time, products, and regions
-
-</details> <details> <summary>2️⃣ Data Mining</summary>
-
-Used Iris dataset to extract patterns:
-
-Clustering (K-Means) — group similar data points
-
-Classification (Decision Tree & KNN) — predict flower species
-
-Association Rule Mining (Apriori) — analyze market basket behavior
+- Designed, cleaned, transformed, and stored a **large retail dataset** from UCI Online Retail II  
+- Implemented a **warehouse structure** for analytical queries  
+- Executed **OLAP queries** for insights: sales trends across time, products, and regions  
 
 </details>
 
-This project bridges data engineering (ETL + warehousing) with data science (modeling + pattern mining).
+<details>
+<summary>2️⃣ Data Mining</summary>
 
-📁 Repository Structure
+- Used **Iris dataset** to extract patterns:  
+  - **Clustering (K-Means)** — group similar data points  
+  - **Classification (Decision Tree & KNN)** — predict flower species  
+  - **Association Rule Mining (Apriori)** — analyze market basket behavior  
+
+</details>
+
+This project bridges **data engineering (ETL + warehousing)** with **data science (modeling + pattern mining)**.
+
+---
+
+## 📁 Repository Structure
+
+```
 DSA2040_Practical_Exam_PeterKidiga_341/
 │
 ├── data/
@@ -46,143 +49,176 @@ DSA2040_Practical_Exam_PeterKidiga_341/
 ├── outputs/
 ├── images/
 └── README.md
+```
 
-🔧 Setup & Installation
+---
+
+## 🔧 Setup & Installation
+
+```bash
 pip install pandas numpy scikit-learn matplotlib seaborn mlxtend sqlite3 openpyxl
+```
 
+**Dataset:** Download Online Retail II from UCI and save as:
 
-Dataset: Download Online Retail II from UCI and save as:
-
+```
 data/Online Retail.xlsx
+```
 
-🌟 SECTION 1: Data Warehousing
-<details> <summary>⭐ Star Schema Design</summary>
+---
 
-Fact Table: SalesFact
+## 🌟 SECTION 1: Data Warehousing
 
-Column	Description
-SalesID	Unique transaction ID
-ProductID	Product identifier
-CustomerID	Customer identifier
-DateID	Date reference
-Quantity	Units sold
-UnitPrice	Price per unit
-TotalSales	Quantity × UnitPrice
+<details>
+<summary>⭐ Star Schema Design</summary>
 
-Dimension Tables:
+**Fact Table:** `SalesFact`  
 
-CustomerDim	ProductDim	TimeDim
-CustomerID, Country	ProductID, ProductName	DateID, Date, Month, Quarter, Year
+| Column      | Description            |
+|------------|------------------------|
+| SalesID    | Unique transaction ID  |
+| ProductID  | Product identifier     |
+| CustomerID | Customer identifier    |
+| DateID     | Date reference         |
+| Quantity   | Units sold             |
+| UnitPrice  | Price per unit         |
+| TotalSales | Quantity × UnitPrice   |
 
-📌 Diagram: images/star_schema_diagram.png
+**Dimension Tables:**  
 
-Why Star Schema?
+| CustomerDim      | ProductDim          | TimeDim                   |
+|-----------------|------------------|---------------------------|
+| CustomerID, Country | ProductID, ProductName | DateID, Date, Month, Quarter, Year |
 
-Fast, simple, OLAP-friendly
+📌 Diagram: `images/star_schema_diagram.png`  
 
-Reduces joins
+*Why Star Schema?*  
+- Fast, simple, OLAP-friendly  
+- Reduces joins  
+- Supports drill-down/roll-up  
 
-Supports drill-down/roll-up
+</details>
 
-</details> <details> <summary>⭐ ETL Process</summary>
+<details>
+<summary>⭐ ETL Process</summary>
 
-Script: scripts/etl_retail.py
+**Script:** `scripts/etl_retail.py`  
 
-✅ Steps:
+✅ Steps:  
+- Extract Excel dataset  
+- Clean data (remove refunds, null CustomerID, negative values)  
+- Create `TotalSales` metric  
+- Load into SQLite warehouse (`retail_dw.db`)  
 
-Extract Excel dataset
-
-Clean data (remove refunds, null CustomerID, negative values)
-
-Create TotalSales metric
-
-Load into SQLite warehouse (retail_dw.db)
-
-Run:
-
+**Run:**  
+```bash
 python scripts/etl_retail.py
+```
 
-</details> <details> <summary>⭐ OLAP Queries & Insights</summary>
+</details>
 
-Script: scripts/olap_queries.py
+<details>
+<summary>⭐ OLAP Queries & Insights</summary>
 
-Query Type	Example Insight
-Total sales by country quarterly (Roll-Up)	UK highest revenue
-Monthly sales for a specific country (Drill-Down)	December seasonal spike
-Sales filtered by category/stock (Slice)	Certain items peak during holidays
+**Script:** `scripts/olap_queries.py`  
 
-📊 Sample Visualization: images/sales_by_country.png
+| Query Type                    | Example Insight |
+|--------------------------------|----------------|
+| Total sales by country quarterly (Roll-Up) | UK highest revenue |
+| Monthly sales for a specific country (Drill-Down) | December seasonal spike |
+| Sales filtered by category/stock (Slice) | Certain items peak during holidays |
 
-Run:
+📊 Sample Visualization: `images/sales_by_country.png`  
 
+**Run:**  
+```bash
 python scripts/olap_queries.py
+```
 
 </details>
-🧠 SECTION 2: Data Mining & Machine Learning
-<details> <summary>⭐ Data Preprocessing & EDA</summary>
 
-Script: scripts/preprocessing_iris.py
+---
 
-✅ Steps:
+## 🧠 SECTION 2: Data Mining & Machine Learning
 
-Check missing values
+<details>
+<summary>⭐ Data Preprocessing & EDA</summary>
 
-Min-Max normalization
+**Script:** `scripts/preprocessing_iris.py`  
 
-Pair plots, heatmaps, boxplots
+✅ Steps:  
+- Check missing values  
+- Min-Max normalization  
+- Pair plots, heatmaps, boxplots  
+- Train/Test split (80/20)  
 
-Train/Test split (80/20)
+**Visual outputs:** `/images/`
 
-Visual outputs: /images/
-
-</details> <details> <summary>⭐ Clustering (K-Means)</summary>
-
-Script: scripts/clustering_iris.py
-
-KMeans k = 3
-
-Adjusted Rand Index (ARI) evaluation
-
-k	ARI Score
-3	~0.73 ✅
-
-Elbow Curve: images/elbow_curve.png
-
-Cluster Visualization: images/cluster_visualization.png
-
-</details> <details> <summary>⭐ Classification & Association Rule Mining</summary>
-
-Script: scripts/mining_iris_basket.py
-
-Classification Models
-
-Model	Accuracy	Notes
-Decision Tree	~95%	Interpretable features
-KNN (k=5)	~92%	Stable performance
-
-Decision Tree visualization: images/decision_tree_viz.png
-
-Association Rule Mining (Apriori)
-
-Rule	Confidence	Lift
-{Diapers} → {Beer}	0.67	1.5
 </details>
-📌 Summary & Conclusion
-Stage	Tools Used	Outcome
-Storage	SQLite	Retail Data Warehouse
-ETL	Python + Pandas	Cleaned transaction data
-OLAP	SQL queries	Business insights
-ML	Scikit-Learn	Predictive & descriptive analytics
-Rules	Apriori	Consumer behavior insights
 
-✅ Demonstrates full data lifecycle: raw data → actionable knowledge.
+<details>
+<summary>⭐ Clustering (K-Means)</summary>
 
-📎 Future Improvements
+**Script:** `scripts/clustering_iris.py`  
 
-Automated monthly ETL jobs
+- KMeans **k = 3**  
+- Adjusted Rand Index (ARI) evaluation  
 
-Dashboard (PowerBI / Streamlit)
+| k | ARI Score |
+|---|-----------|
+| 3 | ~0.73 ✅ |
 
-Customer segmentation model
+- Elbow Curve: `images/elbow_curve.png`  
+- Cluster Visualization: `images/cluster_visualization.png`  
 
-Real-time sales forecasting (ARIMA/LSTM)
+</details>
+
+<details>
+<summary>⭐ Classification & Association Rule Mining</summary>
+
+**Script:** `scripts/mining_iris_basket.py`  
+
+**Classification Models**
+
+| Model         | Accuracy | Notes                  |
+|---------------|---------|-----------------------|
+| Decision Tree | ~95%    | Interpretable features |
+| KNN (k=5)     | ~92%    | Stable performance    |
+
+Decision Tree visualization: `images/decision_tree_viz.png`  
+
+**Association Rule Mining (Apriori)**
+
+| Rule                 | Confidence | Lift |
+|----------------------|-----------|------|
+| {Diapers} → {Beer}   | 0.67      | 1.5  |
+
+</details>
+
+---
+
+## 📌 Summary & Conclusion
+
+| Stage       | Tools Used           | Outcome                           |
+|------------|--------------------|----------------------------------|
+| Storage    | SQLite             | Retail Data Warehouse             |
+| ETL        | Python + Pandas     | Cleaned transaction data          |
+| OLAP       | SQL queries         | Business insights                 |
+| ML         | Scikit-Learn        | Predictive & descriptive analytics |
+| Rules      | Apriori             | Consumer behavior insights        |
+
+✅ Demonstrates **full data lifecycle: raw data → actionable knowledge**.
+
+---
+
+## 📎 Future Improvements
+- Automated monthly ETL jobs  
+- Dashboard (PowerBI / Streamlit)  
+- Customer segmentation model  
+- Real-time sales forecasting (ARIMA/LSTM)  
+
+---
+
+**🏁 Final Note**  
+Original work for **DSA 2040 Practical Exam**, showcasing:  
+✔ Warehousing | ✔ ETL | ✔ OLAP | ✔ Machine Learning | ✔ Pattern Mining
