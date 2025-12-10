@@ -91,6 +91,7 @@ data/Online Retail.xlsx
 | CustomerID, Country | ProductID, ProductName | DateID, Date, Month, Quarter, Year |
 
 📌 Diagram: `images/star_schema_diagram.png`  
+<img width="1000" height="800" alt="Star_schema_diagram" src="https://github.com/user-attachments/assets/4e96918a-8680-4661-b83b-0099b32eb90b" />
 
 *Why Star Schema?*  
 - Fast, simple, OLAP-friendly  
@@ -128,7 +129,9 @@ python scripts/etl_retail.py
 | Monthly sales for a specific country (Drill-Down) | December seasonal spike |
 | Sales filtered by category/stock (Slice) | Certain items peak during holidays |
 
-📊 Sample Visualization: `images/sales_by_country.png`  
+📊 Sample Visualization: 
+
+<img width="846" height="547" alt="montlysalesTrend_UK" src="https://github.com/user-attachments/assets/2de9784b-87e2-425f-ba0f-0d9ef3021ed5" />
 
 **Run:**  
 ```bash
@@ -159,6 +162,8 @@ python scripts/olap_queries.py
 <details>
 <summary>⭐ Clustering (K-Means)</summary>
 
+<img width="693" height="547" alt="K_means_cluster" src="https://github.com/user-attachments/assets/76fe99dd-af9a-4f0f-b0c4-9bc275cebdc0" />
+
 **Script:** `scripts/clustering_iris.py`  
 
 - KMeans **k = 3**  
@@ -186,6 +191,8 @@ python scripts/olap_queries.py
 | KNN (k=5)     | ~92%    | Stable performance    |
 
 Decision Tree visualization: `images/decision_tree_viz.png`  
+
+<img width="950" height="658" alt="Decision_tree_vz" src="https://github.com/user-attachments/assets/7acdbe11-2254-4b7e-89ee-b6ac9897e71d" />
 
 **Association Rule Mining (Apriori)**
 
