@@ -1,5 +1,12 @@
 🏬 DSA 2040 Practical Exam — Data Warehousing & Data Mining Project
 
+
+
+
+
+
+
+
 Student Name: Peter Kidiga
 Student ID: 341
 Course: DSA 2040 — Data Warehousing & Data Mining (FS 2025)
@@ -11,7 +18,7 @@ This project demonstrates end-to-end applied data science, combining:
 
 <details> <summary>1️⃣ Data Warehousing</summary>
 
-Designed, cleaned, transformed, and stored a large retail dataset from Online Retail II (UCI)
+Designed, cleaned, transformed, and stored a large retail dataset from UCI Online Retail II
 
 Implemented a warehouse structure for analytical queries
 
@@ -32,7 +39,6 @@ Association Rule Mining (Apriori) — analyze market basket behavior
 This project bridges data engineering (ETL + warehousing) with data science (modeling + pattern mining).
 
 📁 Repository Structure
-```
 DSA2040_Practical_Exam_PeterKidiga_341/
 │
 ├── data/
@@ -41,15 +47,11 @@ DSA2040_Practical_Exam_PeterKidiga_341/
 ├── images/
 └── README.md
 
-```
-Full structure with file descriptions available in the previous section.
-
 🔧 Setup & Installation
 pip install pandas numpy scikit-learn matplotlib seaborn mlxtend sqlite3 openpyxl
 
 
-Dataset: Download Online Retail II from UCI
- and save as:
+Dataset: Download Online Retail II from UCI and save as:
 
 data/Online Retail.xlsx
 
@@ -109,15 +111,17 @@ Total sales by country quarterly (Roll-Up)	UK highest revenue
 Monthly sales for a specific country (Drill-Down)	December seasonal spike
 Sales filtered by category/stock (Slice)	Certain items peak during holidays
 
-📊 Sample Visualization: 
+📊 Sample Visualization: images/sales_by_country.png
 
+Run:
 
-<img width="846" height="547" alt="montlysalesTrend_UK" src="https://github.com/user-attachments/assets/40672cbc-09e7-4513-b17b-c402ab1ea5f7" />
+python scripts/olap_queries.py
 
 </details>
 🧠 SECTION 2: Data Mining & Machine Learning
 <details> <summary>⭐ Data Preprocessing & EDA</summary>
 
+Script: scripts/preprocessing_iris.py
 
 ✅ Steps:
 
@@ -142,10 +146,9 @@ Adjusted Rand Index (ARI) evaluation
 k	ARI Score
 3	~0.73 ✅
 
-Elbow Curve: 
+Elbow Curve: images/elbow_curve.png
 
-<img width="686" height="393" alt="elbow" src="https://github.com/user-attachments/assets/8cb7d37b-f4c9-474d-b0e1-03fd1291e54a" />
-
+Cluster Visualization: images/cluster_visualization.png
 
 </details> <details> <summary>⭐ Classification & Association Rule Mining</summary>
 
@@ -183,7 +186,3 @@ Dashboard (PowerBI / Streamlit)
 Customer segmentation model
 
 Real-time sales forecasting (ARIMA/LSTM)
-
-🏁 Final Note
-Original work for DSA 2040 Practical Exam, showcasing:
-✔ Warehousing | ✔ ETL | ✔ OLAP | ✔ Machine Learning | ✔ Pattern Mining
