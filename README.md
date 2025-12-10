@@ -16,24 +16,21 @@
 
 This project demonstrates **end-to-end applied data science**, combining:  
 
-<details>
 <summary>1️⃣ Data Warehousing</summary>
 
 - Designed, cleaned, transformed, and stored a **large retail dataset** from UCI Online Retail II  
 - Implemented a **warehouse structure** for analytical queries  
 - Executed **OLAP queries** for insights: sales trends across time, products, and regions  
 
-</details>
 
-<details>
-<summary>2️⃣ Data Mining</summary>
+2️⃣ Data Mining</summary>
 
 - Used **Iris dataset** to extract patterns:  
   - **Clustering (K-Means)** — group similar data points  
   - **Classification (Decision Tree & KNN)** — predict flower species  
   - **Association Rule Mining (Apriori)** — analyze market basket behavior  
 
-</details>
+
 
 This project bridges **data engineering (ETL + warehousing)** with **data science (modeling + pattern mining)**.
 
@@ -69,7 +66,7 @@ data/Online Retail.xlsx
 
 ## 🌟 SECTION 1: Data Warehousing
 
-<details>
+
 <summary>⭐ Star Schema Design</summary>
 
 **Fact Table:** `SalesFact`  
@@ -98,10 +95,6 @@ data/Online Retail.xlsx
 - Reduces joins  
 - Supports drill-down/roll-up  
 
-</details>
-
-<details>
-<summary>⭐ ETL Process</summary>
 
 **Script:** `scripts/etl_retail.py`  
 
@@ -116,10 +109,6 @@ data/Online Retail.xlsx
 python scripts/etl_retail.py
 ```
 
-</details>
-
-<details>
-<summary>⭐ OLAP Queries & Insights</summary>
 
 **Script:** `scripts/olap_queries.py`  
 
@@ -138,7 +127,7 @@ python scripts/etl_retail.py
 python scripts/olap_queries.py
 ```
 
-</details>
+
 
 ---
 
@@ -157,10 +146,6 @@ python scripts/olap_queries.py
 
 **Visual outputs:** `/images/`
 
-</details>
-
-<details>
-<summary>⭐ Clustering (K-Means)</summary>
 
 <img width="693" height="547" alt="K_means_cluster" src="https://github.com/user-attachments/assets/76fe99dd-af9a-4f0f-b0c4-9bc275cebdc0" />
 
@@ -176,10 +161,7 @@ python scripts/olap_queries.py
 - Elbow Curve: `images/elbow_curve.png`  
 - Cluster Visualization: `images/cluster_visualization.png`  
 
-</details>
 
-<details>
-<summary>⭐ Classification & Association Rule Mining</summary>
 
 **Script:** `scripts/mining_iris_basket.py`  
 
@@ -200,7 +182,7 @@ Decision Tree visualization: `images/decision_tree_viz.png`
 |----------------------|-----------|------|
 | {Diapers} → {Beer}   | 0.67      | 1.5  |
 
-</details>
+
 
 ---
 
