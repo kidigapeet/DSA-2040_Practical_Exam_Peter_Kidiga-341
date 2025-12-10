@@ -5,6 +5,7 @@
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-0.25-orange?logo=scikit-learn&logoColor=white)  
 ![MLxtend](https://img.shields.io/badge/MLxtend-0.20-green)  
 
+
 **Student Name:** Peter Kidiga  
 **Student ID:** 341  
 **Course:** DSA 2040 — Data Warehousing & Data Mining (FS 2025)  
@@ -16,14 +17,14 @@
 
 This project demonstrates **end-to-end applied data science**, combining:  
 
-<summary>1️⃣ Data Warehousing</summary>
+1️⃣ Data Warehousing</summary>
 
 - Designed, cleaned, transformed, and stored a **large retail dataset** from UCI Online Retail II  
 - Implemented a **warehouse structure** for analytical queries  
 - Executed **OLAP queries** for insights: sales trends across time, products, and regions  
 
 
-2️⃣ Data Mining</summary>
+2️⃣ Data Mining
 
 - Used **Iris dataset** to extract patterns:  
   - **Clustering (K-Means)** — group similar data points  
@@ -56,7 +57,7 @@ DSA2040_Practical_Exam_PeterKidiga_341/
 pip install pandas numpy scikit-learn matplotlib seaborn mlxtend sqlite3 openpyxl
 ```
 
-**Dataset:** Download Online Retail II from UCI and save as:
+**Dataset:** Download Online Retail II from [UCI](https://archive.ics.uci.edu/dataset/352/online+retail)
 
 ```
 data/Online Retail.xlsx
