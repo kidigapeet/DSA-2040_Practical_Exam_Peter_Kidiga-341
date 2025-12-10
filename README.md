@@ -133,8 +133,6 @@ python scripts/olap_queries.py
 
 ## 🧠 SECTION 2: Data Mining & Machine Learning
 
-<details>
-<summary>⭐ Data Preprocessing & EDA</summary>
 
 **Script:** `scripts/preprocessing_iris.py`  
 
