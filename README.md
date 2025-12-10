@@ -1,6 +1,5 @@
 🏬 DSA 2040 Practical Exam — Data Warehousing & Data Mining Project
 
-
 Student Name: Peter Kidiga
 Student ID: 341
 Course: DSA 2040 — Data Warehousing & Data Mining (FS 2025)
